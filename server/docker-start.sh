@@ -47,7 +47,7 @@ set -m
 
 CMD=status
 if [ "$NEWDB" = "yes" ]; then
-  CMD="configure new single memory; status"
+  CMD="configure new single ssd; status"
 fi
 
 fdbcli --exec "$CMD" --timeout 60
