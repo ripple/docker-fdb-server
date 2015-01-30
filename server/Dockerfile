@@ -1,6 +1,6 @@
 FROM onestone/fdb-client:3.0.6
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
       python \
       python-setuptools \
  && easy_install supervisor && mkdir -p /var/log/supervisor \
