@@ -1,6 +1,6 @@
-FROM onestone/fdb-client:latest
+FROM fdb-client
 
-ENV FDB_SQL_VERSION 2.0.3
+ENV FDB_SQL_VERSION 2.1.0
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
       default-jre-headless \

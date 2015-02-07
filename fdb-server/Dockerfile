@@ -1,4 +1,4 @@
-FROM onestone/fdb-client:3.0.6
+FROM fdb-client
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
       python \

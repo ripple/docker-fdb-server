@@ -1,4 +1,4 @@
-FROM onestone/fdb-sql-client:2.0.3
+FROM fdb-sql-client
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
       python \
