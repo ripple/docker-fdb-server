@@ -29,7 +29,6 @@ fi
 
 if [ ! -f /etc/foundationdb/fdb.cluster ]; then
     echo "docker:$HOSTNAME@$COORDADDR" >/etc/foundationdb/fdb.cluster
-    chown -R foundationdb:foundationdb /etc/foundationdb
     chmod 0644 /etc/foundationdb/fdb.cluster
     NEWDB=yes
 fi
@@ -41,6 +40,8 @@ if [ ! -d /var/lib/foundationdb/data ]; then
     chown foundationdb:foundationdb $DATADIR
     ln -s $DATADIR /var/lib/foundationdb/data
 fi
+
+chown -R foundationdb:foundationdb /etc/foundationdb
 
 set -m
 /usr/lib/foundationdb/fdbmonitor --conffile $CONFFILE --lockfile /var/run/fdbmonitor.pid &
